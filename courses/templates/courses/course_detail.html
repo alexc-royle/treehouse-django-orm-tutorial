@@ -8,7 +8,9 @@
         {{ block.super }}
         <article>
             <h1 class="">{{ course.title }}</h1>
-
+            <div class="callout tertiary">
+                Teacher: {{ course.teacher.first_name }} {{ course.teacher.last_name }}
+            </div>
             <div class="callout secondary">
                 {{ course.description|markdown_to_html }}
             </div>
