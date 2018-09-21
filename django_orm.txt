@@ -1,0 +1,12 @@
+Course.objects.update(published=True): Update all courses and set published to true
+Course.objects.exclude(published=False): Exclude any courses where published is not equal to true
+Course.objects.filter(subject__icontains='cobol'): Get all courses that have the word cobol (case insensitive) in the subject
+Course.objects.filter(subject__icontains='cobol').delete(): Delete all courses that have the word cobol (case insensitive) in the subject
+
+
+course = Course.objects.create(teacher=teacher, title='Django Forms', subject='Python')
+Course.objects.bulk_create([
+  Course(teacher=teacher, title='Django Forms', subject='Python'),
+  Course(teacher=teacher, title='Django ORM', subject='Python')
+])
+Course.objects.get_or_create()
